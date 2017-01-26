@@ -3,6 +3,6 @@
 
 using Xunit;
 
-#if UNIX
+#if DARWIN
 [assembly: CollectionBehavior(DisableTestParallelization = true)]
 #endif

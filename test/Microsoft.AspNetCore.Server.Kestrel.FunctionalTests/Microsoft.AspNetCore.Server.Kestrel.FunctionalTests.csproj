@@ -43,8 +43,18 @@
     <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.4.0-*" />
   </ItemGroup>
 
-  <PropertyGroup Condition=" '$(OS)' == 'Unix' ">
-    <DefineConstants>$(DefineConstants);UNIX</DefineConstants>
+  <PropertyGroup>
+    <Uname></Uname>
+  </PropertyGroup>
+
+  <Target Condition="'$(OS)' == 'Unix'" Name="RunUname" BeforeTargets="Build">
+    <Exec Command="uname" ConsoleToMSBuild="true">
+      <Output TaskParameter="ConsoleOutput" PropertyName="Uname" />
+    </Exec>
+  </Target>
+
+  <PropertyGroup Condition="'$(Uname)' == 'Darwin'">
+    <DefineConstants>$(DefineConstants);DARWIN</DefineConstants>
   </PropertyGroup>
 
 </Project>
