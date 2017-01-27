@@ -11,10 +11,7 @@
 
   <ItemGroup>
     <Compile Include="..\shared\**\*.cs" />
-    <Content Include="TestResources\testCert.pfx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <Content Include="TestResources\testCert.pfx" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -32,11 +29,6 @@
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
     <Reference Include="System.Net.Http" />
-  </ItemGroup>
-
-  <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
-    <PackageReference Include="System.Diagnostics.TraceSource" Version="4.4.0-*" />
-    <PackageReference Include="System.Net.Http.WinHttpHandler" Version="4.4.0-*" />
   </ItemGroup>
 
 </Project>

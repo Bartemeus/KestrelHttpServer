@@ -10,10 +10,7 @@
 
   <ItemGroup>
     <Compile Include="..\shared\**\*.cs" />
-    <Content Include="TestResources\testCert.pfx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
-    </Content>
+    <Content Include="TestResources\testCert.pfx" CopyToOutputDirectory="PreserveNewest" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,9 +31,7 @@
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'netcoreapp1.1' ">
-    <PackageReference Include="System.Net.Http.WinHttpHandler" Version="4.4.0-*" />
     <PackageReference Include="System.Net.NetworkInformation" Version="4.4.0-*" />
-    <PackageReference Include="System.Runtime.Serialization.Primitives" Version="4.4.0-*" />
   </ItemGroup>
 
   <Target Condition="'$(OS)' == 'Unix'" Name="RunUname" BeforeTargets="CoreCompile">
