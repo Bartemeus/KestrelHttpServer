@@ -18,7 +18,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\..\src\Microsoft.AspNetCore.Server.Kestrel\Microsoft.AspNetCore.Server.Kestrel.csproj" />
-    <PackageReference Include="BenchmarkDotNet" Version="0.10.1" />
+    <PackageReference Include="BenchmarkDotNet" Version="0.10.2.*" />
     <PackageReference Include="Moq" Version="4.6.36-*" />
   </ItemGroup>
 
